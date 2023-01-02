@@ -4,7 +4,7 @@ import Testimonials from './Testimonials';
 import About from './About';
 import Hero from './Hero';
 
-function Main() {
+function MainHome() {
   return (
     <main className='main-section'>
       <Hero />
@@ -15,4 +15,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default MainHome;

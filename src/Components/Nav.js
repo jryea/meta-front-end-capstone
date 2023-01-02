@@ -1,24 +1,19 @@
 import React from 'react';
+import { pageLinks } from '../data';
 
 function Nav() {
   return (
     <nav>
       <ul>
-        <li>
-          <a href='#top'>Home</a>
-        </li>
-        <li>
-          <a href='#top'>About</a>
-        </li>
-        <li>
-          <a href='#top'>Reservations</a>
-        </li>
-        <li>
-          <a href='#top'>Order Online</a>
-        </li>
-        <li>
-          <a href='#top'>Login</a>
-        </li>
+        {pageLinks.map((link) => {
+          return (
+            <li>
+              <a key={link.id} href={link.href}>
+                {link.text}
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );

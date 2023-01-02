@@ -4,15 +4,15 @@
 *::after {
   box-sizing: inherit;
   padding: 0;
-  margin: 0;
-  border: 1px solid red; }
+  margin: 0; }
 
 html {
   font-size: 62.5%;
   height: 100%;
   width: 100%;
   background-color: white;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  scroll-behavior: smooth; }
 
 #root {
   display: flex;
@@ -35,12 +35,89 @@ html {
   border-radius: 16px; }
 
 .button:hover {
+  background-color: #f7dd5d;
   cursor: pointer; }
+
+.time-button {
+  font-family: 'Karla', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  width: 10rem;
+  height: 3.5rem;
+  background-color: #edefee;
+  border-radius: 5px; }
+
+.section-key {
+  display: flex; }
+
+.section-key-group {
+  display: flex; }
+
+.section-key-box {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid black;
+  margin-right: 1rem; }
+
+.section-key-text {
+  color: #495e57;
+  font-family: 'Karla', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-weight: 400;
+  margin-right: 3rem; }
+
+.available {
+  background-color: white; }
+
+.not-available {
+  background-color: #edefee; }
+
+.selected {
+  background-color: #495e57; }
+
+.line-light {
+  width: 100%;
+  border-bottom: 1px solid #edefee; }
+
+.line-dark {
+  width: 100%;
+  border-bottom: 1px solid #b5b5b5; }
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 10rem);
+  grid-template-rows: repeat(5, 10rem); }
+
+.calendar-box-available {
+  background-color: white;
+  border: 1px solid #edefee;
+  cursor: pointer; }
+
+.calendar-box-not-available {
+  background-color: #edefee;
+  border: 1px solid #edefee; }
+
+.calendar-box-selected {
+  background-color: #495e57; }
+
+.calendar-box:hover {
+  cursor: pointer; }
+
+.calendar-box-date {
+  color: #495e57;
+  font-family: 'Karla', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-weight: 400;
+  margin-left: 1rem;
+  margin-top: 1rem; }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   max-width: 1060px;
   margin: 6rem 30rem; }
 
@@ -54,12 +131,15 @@ nav ul {
   list-style: none; }
 
 nav ul li a {
-  color: black;
+  color: #333333;
   font-family: 'Karla', sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
   margin-left: 6rem;
   text-decoration: none; }
+
+nav ul li a:hover {
+  color: #f4ce14; }
 
 .main-section {
   display: flex;
@@ -117,7 +197,8 @@ nav ul li a {
   flex-direction: column;
   padding: 2rem 0;
   max-width: 1060px;
-  margin: 6rem 30rem; }
+  margin: 6rem 30rem;
+  scroll-margin-top: 6rem; }
 
 .specials-section-header {
   display: flex;
@@ -142,11 +223,16 @@ nav ul li a {
 
 .special-card-image {
   width: 100%;
-  border-radius: 16px 16px 0 0; }
+  border-radius: 16px 16px 0 0;
+  margin-bottom: 1.5rem; }
+
+.special-card-content {
+  padding: 0 2.4rem; }
 
 .special-card-title {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  margin-bottom: 2rem; }
 
 .special-card-title-name {
   font-family: 'Karla', sans-serif;
@@ -163,10 +249,12 @@ nav ul li a {
   font-family: 'Karla', sans-serif;
   font-size: 1.6rem;
   line-height: 1.5;
-  font-weight: 400; }
+  font-weight: 400;
+  margin-bottom: 4rem; }
 
 .special-card-order {
-  display: flex; }
+  display: flex;
+  margin-bottom: 3rem; }
 
 .special-card-order-text {
   font-family: 'Karla', sans-serif;
@@ -174,6 +262,7 @@ nav ul li a {
   font-weight: 700; }
 
 .cart {
+  margin-left: 2rem;
   width: 20px; }
 
 .testimonial-section {
@@ -190,46 +279,53 @@ nav ul li a {
   color: white; }
 
 .testimonial-section-cards {
-  display: flex; }
+  display: flex;
+  gap: 5em; }
 
 .testimonial-card {
   margin: 4rem 0;
   display: flex;
   flex-direction: column;
+  width: 25%;
   background-color: white;
   border-radius: 16px; }
 
 .testimonial-card-stars {
   width: 10rem;
-  align-self: center; }
+  align-self: center;
+  margin: 1.5rem 0; }
 
 .testimonial-card-image {
+  width: 100%;
   border-radius: 16px 16px 0 0; }
 
 .testimonial-card-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0 3em; }
+  padding: 0 2.4em; }
 
 .testimonial-card-quote {
   color: #495e57;
   font-family: 'Karla', sans-serif;
   font-size: 1.6rem;
   line-height: 1.5;
-  font-weight: 400; }
+  font-weight: 400;
+  margin-bottom: 2rem; }
 
 .testimonial-card-name {
   font-family: 'Karla', sans-serif;
   font-size: 1.6rem;
   font-weight: 500;
-  align-self: flex-end; }
+  align-self: flex-end;
+  margin-bottom: 1.5rem; }
 
 .about-section {
   position: relative;
   padding: 2rem 0 24rem;
   max-width: 1060px;
-  margin: 6rem 30rem; }
+  margin: 6rem 30rem;
+  scroll-margin-top: 6rem; }
 
 .about-images {
   position: absolute;
@@ -285,7 +381,8 @@ nav ul li a {
 .footer-nav-link-section {
   display: flex;
   justify-content: space-between;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 2rem; }
 
 .footer-image {
   width: 15rem;
@@ -295,7 +392,8 @@ nav ul li a {
   font-family: 'Karla', sans-serif;
   font-size: 2.2rem;
   font-weight: 400;
-  color: #f4ce14; }
+  color: #f4ce14;
+  margin-bottom: 1rem; }
 
 .footer-nav-link {
   color: #495e57;
@@ -303,11 +401,8 @@ nav ul li a {
   font-size: 1.6rem;
   line-height: 1.5;
   font-weight: 400;
-  color: #edefee; }
-
-.line {
-  width: 100%;
-  border-bottom: 1px solid #edefee; }
+  color: #edefee;
+  text-decoration: none; }
 
 .footer-info {
   margin-top: 0.5rem;
@@ -328,3 +423,38 @@ nav ul li a {
 
 .footer-icon {
   margin-left: 2rem; }
+
+.available-dates-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem 0;
+  max-width: 1060px;
+  margin: 6rem 30rem; }
+
+.available-dates-title {
+  font-family: 'Markazi Text', serif;
+  font-size: 6.4rem;
+  font-weight: 400; }
+
+.available-dates-subtitle {
+  text-transform: uppercase;
+  font-family: 'Karla', sans-serif;
+  font-size: 3rem;
+  font-weight: 700; }
+
+.available-dates-key {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.time-category {
+  color: white;
+  font-family: 'Karla', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700; }
+
+.time-buttons-section {
+  display: flex;
+  gap: 1rem; }

@@ -8,32 +8,6 @@ $color-light-salmon: #fbdabb;
 $color-light-gray: #edefee;
 $color-dark-gray: #333333;
 
-// RESET
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-  padding: 0;
-  margin: 0;
-  border: 1px solid red;
-}
-
-html {
-  font-size: 62.5%;
-  height: 100%;
-  width: 100%;
-  background-color: white;
-  box-sizing: border-box;
-}
-
-#root {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
 // MIXINS
 @mixin text-title {
   font-family: 'Markazi Text', serif;
@@ -56,8 +30,8 @@ html {
 @mixin text-section-title {
   text-transform: uppercase;
   font-family: 'Karla', sans-serif;
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 @mixin text-section-categories {
@@ -86,7 +60,35 @@ html {
   font-weight: 500;
 }
 
+// RESET
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 //COMPONENTS
+
+//Buttons
 .button {
   @include text-card-title;
   width: max-content;
@@ -101,7 +103,97 @@ html {
 }
 
 .button:hover {
+  background-color: lighten($color-yellow, 15%);
+  // transform: scale(1.05);
   cursor: pointer;
+}
+
+.button:hover {
+}
+
+.time-button {
+  @include text-highlight;
+  width: 10rem;
+  height: 3.5rem;
+  background-color: $color-light-gray;
+  border-radius: 5px;
+}
+
+//section key
+.section-key {
+  display: flex;
+}
+
+.section-key-group {
+  display: flex;
+}
+
+.section-key-box {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid black;
+  margin-right: 1rem;
+}
+
+.section-key-text {
+  @include text-body;
+  margin-right: 3rem;
+}
+
+.available {
+  background-color: white;
+}
+
+.not-available {
+  background-color: $color-light-gray;
+}
+
+.selected {
+  background-color: $color-green;
+}
+
+//Line
+.line-light {
+  width: 100%;
+  border-bottom: 1px solid $color-light-gray;
+}
+
+.line-dark {
+  width: 100%;
+  border-bottom: 1px solid #b5b5b5;
+}
+
+// CALENDAR
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 10rem);
+  grid-template-rows: repeat(5, 10rem);
+}
+
+.calendar-box-available {
+  background-color: white;
+  border: 1px solid $color-light-gray;
+  cursor: pointer;
+}
+
+.calendar-box-not-available {
+  background-color: $color-light-gray;
+  border: 1px solid $color-light-gray;
+}
+
+.calendar-box-selected {
+  background-color: $color-green;
+}
+
+.calendar-box:hover {
+  cursor: pointer;
+}
+
+.calendar-box-date {
+  @include text-body;
+  margin-left: 1rem;
+  margin-top: 1rem;
 }
 
 //HEADER
@@ -109,6 +201,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   max-width: 1060px;
   margin: 6rem 30rem;
 }
@@ -126,10 +219,14 @@ nav ul {
 }
 
 nav ul li a {
-  color: black;
+  color: $color-dark-gray;
   @include text-card-title;
   margin-left: 6rem;
   text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: $color-yellow;
 }
 
 //MAIN
@@ -193,6 +290,7 @@ nav ul li a {
   padding: 2rem 0;
   max-width: 1060px;
   margin: 6rem 30rem;
+  scroll-margin-top: 6rem;
 }
 
 .specials-section-header {
@@ -221,11 +319,17 @@ nav ul li a {
 .special-card-image {
   width: 100%;
   border-radius: 16px 16px 0 0;
+  margin-bottom: 1.5rem;
+}
+
+.special-card-content {
+  padding: 0 2.4rem;
 }
 
 .special-card-title {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 2rem;
 }
 
 .special-card-title-name {
@@ -238,10 +342,12 @@ nav ul li a {
 
 .special-card-description {
   @include text-body;
+  margin-bottom: 4rem;
 }
 
 .special-card-order {
   display: flex;
+  margin-bottom: 3rem;
 }
 
 .special-card-order-text {
@@ -249,6 +355,7 @@ nav ul li a {
 }
 
 .cart {
+  margin-left: 2rem;
   width: 20px;
 }
 
@@ -268,15 +375,16 @@ nav ul li a {
 }
 
 .testimonial-section-cards {
+  // width: 100%;
   display: flex;
-  // gap: 3em;
+  gap: 5em;
 }
 
 .testimonial-card {
   margin: 4rem 0;
   display: flex;
   flex-direction: column;
-  // width: 25%;
+  width: 25%;
   background-color: white;
   border-radius: 16px;
 }
@@ -284,9 +392,11 @@ nav ul li a {
 .testimonial-card-stars {
   width: 10rem;
   align-self: center;
+  margin: 1.5rem 0;
 }
 
 .testimonial-card-image {
+  width: 100%;
   border-radius: 16px 16px 0 0;
 }
 
@@ -294,16 +404,18 @@ nav ul li a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0 3em;
+  padding: 0 2.4em;
 }
 
 .testimonial-card-quote {
   @include text-body;
+  margin-bottom: 2rem;
 }
 
 .testimonial-card-name {
   @include text-highlight;
   align-self: flex-end;
+  margin-bottom: 1.5rem;
 }
 
 //ABOUT
@@ -313,6 +425,7 @@ nav ul li a {
   padding: 2rem 0 24rem;
   max-width: 1060px;
   margin: 6rem 30rem;
+  scroll-margin-top: 6rem;
 }
 
 .about-images {
@@ -372,6 +485,7 @@ nav ul li a {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-bottom: 2rem;
 }
 
 .footer-image {
@@ -384,16 +498,13 @@ nav ul li a {
   font-size: 2.2rem;
   font-weight: 400;
   color: $color-yellow;
+  margin-bottom: 1rem;
 }
 
 .footer-nav-link {
   @include text-body;
   color: $color-light-gray;
-}
-
-.line {
-  width: 100%;
-  border-bottom: 1px solid $color-light-gray;
+  text-decoration: none;
 }
 
 .footer-info {
@@ -414,4 +525,39 @@ nav ul li a {
 
 .footer-icon {
   margin-left: 2rem;
+}
+
+// BOOK TABLE
+
+.available-dates-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem 0;
+  max-width: 1060px;
+  margin: 6rem 30rem;
+}
+.available-dates-title {
+  @include text-title;
+}
+
+.available-dates-subtitle {
+  @include text-section-title;
+}
+
+.available-dates-key {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.time-category {
+  color: white;
+  @include text-card-title;
+}
+
+.time-buttons-section {
+  display: flex;
+  gap: 1rem;
 }

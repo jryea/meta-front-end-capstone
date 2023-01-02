@@ -5,7 +5,7 @@ import topImage from '../images/Restaurant_02.png';
 
 function About() {
   return (
-    <section className='about-section'>
+    <section id='about' className='about-section'>
       <p className='about-title'>Little Lemon</p>
       <p className='about-sub-title'>Chicago</p>
       <p className='about-description'>

@@ -1,15 +1,11 @@
-import './App.css';
 import React from 'react';
-import Footer from './Components/Footer';
-import Header from './Components/Header';
-import Main from './Components/Main';
+import HomePage from './Components/HomePage';
+import BookTablePage from './Components/BookTablePage';
 
 function App() {
   return (
     <>
-      <Header></Header>
-      <Main></Main>
-      <Footer></Footer>
+      <BookTablePage />
     </>
   );
 }
