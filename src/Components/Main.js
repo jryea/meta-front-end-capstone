@@ -2,13 +2,15 @@ import React from 'react';
 import Specials from './Specials';
 import Testimonials from './Testimonials';
 import About from './About';
+import Hero from './Hero';
 
 function Main() {
   return (
-    <main>
-      <Specials></Specials>
-      <Testimonials></Testimonials>
-      <About></About>
+    <main className='main-section'>
+      <Hero />
+      <Specials />
+      <Testimonials />
+      <About />
     </main>
   );
 }

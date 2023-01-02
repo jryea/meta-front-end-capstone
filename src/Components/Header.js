@@ -6,7 +6,7 @@ const logo = require('../images/Asset 16@4x.png');
 function Header() {
   return (
     <header>
-      <img src={logo} />
+      <img src={logo} className='header-logo' />
       <Nav></Nav>
     </header>
   );

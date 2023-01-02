@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700;800&family=Markazi+Text:wght@400;500&display=swap');
+
+// VARIABLES
+$color-yellow: #f4ce14;
+$color-green: #495e57;
+$color-salmon: #ee9972;
+$color-light-salmon: #fbdabb;
+$color-light-gray: #edefee;
+$color-dark-gray: #333333;
+
+// RESET
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+  border: 1px solid red;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+// MIXINS
+@mixin text-title {
+  font-family: 'Markazi Text', serif;
+  font-size: 6.4rem;
+  font-weight: 400;
+}
+
+@mixin text-sub-title {
+  font-family: 'Markazi Text', serif;
+  font-size: 4rem;
+  font-weight: 300;
+}
+
+@mixin text-lead {
+  font-family: 'Karla', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+@mixin text-section-title {
+  text-transform: uppercase;
+  font-family: 'Karla', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+@mixin text-section-categories {
+  font-family: 'Karla', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+@mixin text-card-title {
+  font-family: 'Karla', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+@mixin text-body {
+  color: $color-green;
+  font-family: 'Karla', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+@mixin text-highlight {
+  font-family: 'Karla', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+//COMPONENTS
+.button {
+  @include text-card-title;
+  width: max-content;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 3.4rem;
+  height: 5.4rem;
+  color: black;
+  background-color: $color-yellow;
+  border-radius: 16px;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+//HEADER
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1060px;
+  margin: 6rem 30rem;
+}
+
+.header-logo {
+  width: 200px;
+}
+
+//NAV
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+}
+
+nav ul li a {
+  color: black;
+  @include text-card-title;
+  margin-left: 6rem;
+  text-decoration: none;
+}
+
+//MAIN
+
+.main-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+//HERO
+.full-width-container {
+  display: flex;
+  justify-content: center;
+  background-color: $color-green;
+  width: 100%;
+}
+
+.hero-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+  width: 100%;
+  max-width: 1060px;
+  margin: 6rem 30rem 12rem;
+}
+
+.hero-image {
+  position: absolute;
+  bottom: -10rem;
+  right: 0;
+  width: 40rem;
+  border-radius: 16px;
+}
+
+.hero-title {
+  @include text-title;
+  color: $color-yellow;
+}
+
+.hero-sub-title {
+  margin-top: -2rem;
+  margin-bottom: 1.4rem;
+  @include text-sub-title;
+  color: white;
+}
+
+.hero-description {
+  color: white;
+  @include text-lead;
+  width: 25rem;
+  margin-bottom: 4rem;
+}
+
+//SPECIALS
+.specials-section {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+  max-width: 1060px;
+  margin: 6rem 30rem;
+}
+
+.specials-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.specials-title {
+  @include text-title;
+}
+
+.specials-cards {
+  display: flex;
+  gap: 4.5rem;
+  width: 100%;
+}
+
+.special-card {
+  width: 33.333%;
+  background-color: $color-light-gray;
+  border-radius: 16px 16px 0 0;
+}
+
+.special-card-image {
+  width: 100%;
+  border-radius: 16px 16px 0 0;
+}
+
+.special-card-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.special-card-title-name {
+  @include text-card-title;
+}
+
+.special-card-title-price {
+  @include text-lead;
+}
+
+.special-card-description {
+  @include text-body;
+}
+
+.special-card-order {
+  display: flex;
+}
+
+.special-card-order-text {
+  @include text-card-title;
+}
+
+.cart {
+  width: 20px;
+}
+
+//TESTIMONIALS
+
+.testimonial-section {
+  display: flex;
+  flex-direction: column;
+  max-width: 1060px;
+  margin: 6rem 30rem;
+}
+
+.testimonial-section-title {
+  margin-top: 2rem;
+  @include text-title;
+  color: white;
+}
+
+.testimonial-section-cards {
+  display: flex;
+  // gap: 3em;
+}
+
+.testimonial-card {
+  margin: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  // width: 25%;
+  background-color: white;
+  border-radius: 16px;
+}
+
+.testimonial-card-stars {
+  width: 10rem;
+  align-self: center;
+}
+
+.testimonial-card-image {
+  border-radius: 16px 16px 0 0;
+}
+
+.testimonial-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 3em;
+}
+
+.testimonial-card-quote {
+  @include text-body;
+}
+
+.testimonial-card-name {
+  @include text-highlight;
+  align-self: flex-end;
+}
+
+//ABOUT
+
+.about-section {
+  position: relative;
+  padding: 2rem 0 24rem;
+  max-width: 1060px;
+  margin: 6rem 30rem;
+}
+
+.about-images {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.about-bottom-image {
+  position: absolute;
+  top: 17.5rem;
+  right: 14rem;
+  height: 35rem;
+  width: 28rem;
+  border-radius: 16px;
+}
+
+.about-top-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 28rem;
+  height: 35rem;
+  border-radius: 16px;
+}
+
+.about-title {
+  @include text-title;
+  color: $color-yellow;
+}
+
+.about-sub-title {
+  margin-top: -2rem;
+  margin-bottom: 1.4rem;
+  @include text-sub-title;
+  color: black;
+}
+
+.about-description {
+  color: $color-green;
+  @include text-lead;
+  width: 50%;
+}
+
+//FOOTER
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem 0;
+  max-width: 1060px;
+  margin: 6rem 30rem;
+}
+
+.footer-nav-link-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-image {
+  width: 15rem;
+  border-radius: 16px;
+}
+
+.footer-nav-heading {
+  font-family: 'Karla', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: $color-yellow;
+}
+
+.footer-nav-link {
+  @include text-body;
+  color: $color-light-gray;
+}
+
+.line {
+  width: 100%;
+  border-bottom: 1px solid $color-light-gray;
+}
+
+.footer-info {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  @include text-body;
+  color: white;
+}
+
+.footer-socials {
+  display: flex;
+}
+
+.footer-icon {
+  margin-left: 2rem;
+}
