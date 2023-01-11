@@ -28,7 +28,6 @@ $color-dark-gray: #333333;
 }
 
 @mixin text-section-title {
-  text-transform: uppercase;
   font-family: 'Karla', sans-serif;
   font-size: 3rem;
   font-weight: 700;
@@ -95,7 +94,7 @@ html {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 0 3.4rem;
+  padding: 0 2rem;
   height: 5.4rem;
   color: black;
   background-color: $color-yellow;
@@ -106,9 +105,6 @@ html {
   background-color: lighten($color-yellow, 15%);
   // transform: scale(1.05);
   cursor: pointer;
-}
-
-.button:hover {
 }
 
 .time-button {
@@ -171,22 +167,9 @@ html {
   grid-template-rows: repeat(5, 10rem);
 }
 
-.calendar-box-available {
+.calendar-box {
   background-color: white;
   border: 1px solid $color-light-gray;
-  cursor: pointer;
-}
-
-.calendar-box-not-available {
-  background-color: $color-light-gray;
-  border: 1px solid $color-light-gray;
-}
-
-.calendar-box-selected {
-  background-color: $color-green;
-}
-
-.calendar-box:hover {
   cursor: pointer;
 }
 
@@ -196,7 +179,85 @@ html {
   margin-top: 1rem;
 }
 
+.calendar-box-selected {
+  border: 1px solid black;
+  background-color: $color-green;
+
+  .calendar-box-date {
+    color: white;
+  }
+}
+
+.calendar-box-unavailable {
+  background-color: $color-light-gray;
+  border: 1px solid darken($color-light-gray, 5%);
+  cursor: default;
+
+  .calendar-box-date {
+    color: darken($color-light-gray, 20%);
+  }
+}
+
+// SEATING
+
+.small-seating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inner-seating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.small-table {
+  background-color: black;
+  width: 4rem;
+  height: 4rem;
+  margin: 0.5rem;
+}
+
+.seating-unavailable {
+  background-color: $color-light-gray;
+}
+
+.chair-top {
+  background-color: black;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100% 100% 0 0;
+}
+
+.chair-bottom {
+  background-color: black;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0 0 100% 100%;
+}
+
+.chair-right {
+  background-color: black;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0 100% 100% 0;
+}
+
+.chair-left {
+  background-color: black;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100% 0 0 100%;
+}
+
+.seating-available {
+  background-color: white;
+  border: hsl(0, 0, 50%);
+}
+
 //HEADER
+
 header {
   display: flex;
   justify-content: space-between;
@@ -552,12 +613,52 @@ nav ul li a:hover {
   align-items: center;
 }
 
-.time-category {
-  color: white;
-  @include text-card-title;
-}
-
 .time-buttons-section {
   display: flex;
   gap: 1rem;
+}
+
+.available-times-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1060px;
+  margin: 6rem 30rem;
+}
+
+.available-times-subtitle {
+  @include text-section-title;
+  color: white;
+}
+
+.available-times-key {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.time-category {
+  color: white;
+  @include text-card-title;
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.time-buttons-section {
+  margin-bottom: 1.5rem;
+}
+
+//SEATING SECTION
+
+.seating-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1060px;
+  margin: 6rem 30rem;
+}
+
+.seating-subtitle {
+  @include text-section-title;
 }

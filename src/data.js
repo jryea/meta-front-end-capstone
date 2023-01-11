@@ -97,13 +97,13 @@ export const testimonialData = [
 export const calendarData = [];
 
 for (let i = 1; i <= 31; i++) {
-  let randomCondition = 'not-available';
-  if (Math.random() < 0.7) randomCondition = 'available';
-  calendarData.push({ date: i, condition: randomCondition });
+  let isAvailable = false;
+  if (Math.random() < 0.7) isAvailable = true;
+  calendarData.push({ date: i, available: isAvailable });
 }
 
 for (let i = 1; i <= 4; i++) {
-  calendarData.push({ date: '', condition: 'not-available' });
+  calendarData.push({ date: '', available: false });
 }
 
 export const timeData = {

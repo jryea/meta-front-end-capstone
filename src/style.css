@@ -28,7 +28,7 @@ html {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 0 3.4rem;
+  padding: 0 2rem;
   height: 5.4rem;
   color: black;
   background-color: #f4ce14;
@@ -89,19 +89,9 @@ html {
   grid-template-columns: repeat(7, 10rem);
   grid-template-rows: repeat(5, 10rem); }
 
-.calendar-box-available {
+.calendar-box {
   background-color: white;
   border: 1px solid #edefee;
-  cursor: pointer; }
-
-.calendar-box-not-available {
-  background-color: #edefee;
-  border: 1px solid #edefee; }
-
-.calendar-box-selected {
-  background-color: #495e57; }
-
-.calendar-box:hover {
   cursor: pointer; }
 
 .calendar-box-date {
@@ -112,6 +102,66 @@ html {
   font-weight: 400;
   margin-left: 1rem;
   margin-top: 1rem; }
+
+.calendar-box-selected {
+  border: 1px solid black;
+  background-color: #495e57; }
+  .calendar-box-selected .calendar-box-date {
+    color: white; }
+
+.calendar-box-unavailable {
+  background-color: #edefee;
+  border: 1px solid #e0e3e1;
+  cursor: default; }
+  .calendar-box-unavailable .calendar-box-date {
+    color: #b7bfbb; }
+
+.small-seating {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.inner-seating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.small-table {
+  background-color: black;
+  width: 4rem;
+  height: 4rem;
+  margin: 0.5rem; }
+
+.seating-unavailable {
+  background-color: #edefee; }
+
+.chair-top {
+  background-color: black;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100% 100% 0 0; }
+
+.chair-bottom {
+  background-color: black;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0 0 100% 100%; }
+
+.chair-right {
+  background-color: black;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0 100% 100% 0; }
+
+.chair-left {
+  background-color: black;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100% 0 0 100%; }
+
+.seating-available {
+  background-color: white;
+  border: gray; }
 
 header {
   display: flex;
@@ -439,7 +489,6 @@ nav ul li a:hover {
   font-weight: 400; }
 
 .available-dates-subtitle {
-  text-transform: uppercase;
   font-family: 'Karla', sans-serif;
   font-size: 3rem;
   font-weight: 700; }
@@ -449,12 +498,48 @@ nav ul li a:hover {
   justify-content: space-between;
   align-items: center; }
 
+.time-buttons-section {
+  display: flex;
+  gap: 1rem; }
+
+.available-times-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1060px;
+  margin: 6rem 30rem; }
+
+.available-times-subtitle {
+  font-family: 'Karla', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: white; }
+
+.available-times-key {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem; }
+
 .time-category {
   color: white;
   font-family: 'Karla', sans-serif;
   font-size: 1.8rem;
-  font-weight: 700; }
+  font-weight: 700;
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem; }
 
 .time-buttons-section {
+  margin-bottom: 1.5rem; }
+
+.seating-section {
   display: flex;
-  gap: 1rem; }
+  flex-direction: column;
+  width: 100%;
+  max-width: 1060px;
+  margin: 6rem 30rem; }
+
+.seating-subtitle {
+  font-family: 'Karla', sans-serif;
+  font-size: 3rem;
+  font-weight: 700; }

@@ -10,12 +10,11 @@ function TimeButton({ children }) {
 function AvailableTimes() {
   return (
     <div className='full-width-container'>
-      <section className='available-dates-section'>
-        <h2 className='available-dates-title'>Reserve a table</h2>
-        <h3 className='available-dates-subtitle'>Available dates</h3>
-        <div className='available-dates-key'>
+      <section className='available-times-section'>
+        <h3 className='available-times-subtitle'>Available Times</h3>
+        <div className='available-times-key'>
           <SectionKey />
-          <Button>Confirm</Button>
+          <Button>Confirm Reservation</Button>
         </div>
         <div className='line-dark' />
         <h4 className='time-category'>Breakfast</h4>

@@ -6,11 +6,10 @@ import Calendar from './Calendar';
 function AvailableDates() {
   return (
     <section className='available-dates-section'>
-      <h2 className='available-dates-title'>Reserve a table</h2>
-      <h3 className='available-dates-subtitle'>Available dates</h3>
-      <div className='available-dates-key yellow'>
+      <h3 className='available-dates-subtitle'>Available Dates</h3>
+      <div className='available-dates-key'>
         <SectionKey />
-        <Button>Confirm</Button>
+        <Button>Confirm Reservation</Button>
       </div>
       <div className='line-dark' />
       <Calendar />
