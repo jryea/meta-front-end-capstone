@@ -111,8 +111,20 @@ html {
   @include text-highlight;
   width: 10rem;
   height: 3.5rem;
-  background-color: $color-light-gray;
+  background-color: white;
   border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.time-button-selected {
+  background-color: $color-yellow;
+}
+
+.time-button-unavailable {
+  background-color: darken($color-light-gray, 10%);
+  cursor: default;
+  color: darken($color-light-gray, 40%);
 }
 
 //section key

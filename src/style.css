@@ -44,8 +44,18 @@ html {
   font-weight: 500;
   width: 10rem;
   height: 3.5rem;
-  background-color: #edefee;
-  border-radius: 5px; }
+  background-color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer; }
+
+.time-button-selected {
+  background-color: #f4ce14; }
+
+.time-button-unavailable {
+  background-color: #d2d7d5;
+  cursor: default;
+  color: #818f88; }
 
 .section-key {
   display: flex; }

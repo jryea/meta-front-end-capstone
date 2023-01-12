@@ -1,13 +1,29 @@
 import React from 'react';
+import { useState } from 'react';
 import SectionKey from './SectionKey';
 import Button from './Button';
 import { timeData } from '../data';
 
-function TimeButton({ children }) {
-  return <button className='time-button'>{children}</button>;
+function TimeButton({ children, handleClick, selected = false, available }) {
+  return (
+    <button
+      className={`time-button ${selected ? 'time-button-selected' : ''} ${
+        available ? '' : 'time-button-unavailable'
+      }`}
+      onClick={handleClick}
+    >
+      {children}
+    </button>
+  );
 }
 
 function AvailableTimes() {
+  const [selected, setSelected] = useState('');
+
+  function handleClick(button) {
+    setSelected(button.time);
+    console.log(selected);
+  }
   return (
     <div className='full-width-container'>
       <section className='available-times-section'>
@@ -20,22 +36,46 @@ function AvailableTimes() {
         <h4 className='time-category'>Breakfast</h4>
         <div className='time-buttons-section'>
           {timeData.breakfast.map((button) => {
-            console.log(button);
-            return <TimeButton key={button.id}>{button.time}</TimeButton>;
+            return (
+              <TimeButton
+                key={button.id}
+                selected={button.time === selected}
+                available={button.available}
+                handleClick={() => handleClick(button)}
+              >
+                {button.time}
+              </TimeButton>
+            );
           })}
         </div>
         <h4 className='time-category'>Lunch</h4>
         <div className='time-buttons-section'>
-          {timeData.breakfast.map((button) => {
-            console.log(button);
-            return <TimeButton key={button.id}>{button.time}</TimeButton>;
+          {timeData.lunch.map((button) => {
+            return (
+              <TimeButton
+                key={button.id}
+                selected={button.time === selected}
+                available={button.available}
+                handleClick={() => handleClick(button)}
+              >
+                {button.time}
+              </TimeButton>
+            );
           })}
         </div>
         <h4 className='time-category'>Dinner</h4>
         <div className='time-buttons-section'>
-          {timeData.breakfast.map((button) => {
-            console.log(button);
-            return <TimeButton key={button.id}>{button.time}</TimeButton>;
+          {timeData.dinner.map((button) => {
+            return (
+              <TimeButton
+                key={button.id}
+                selected={button.time === selected}
+                available={button.available}
+                handleClick={() => handleClick(button)}
+              >
+                {button.time}
+              </TimeButton>
+            );
           })}
         </div>
       </section>
