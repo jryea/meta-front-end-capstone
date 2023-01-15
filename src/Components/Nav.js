@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { pageLinks } from '../data';
 
 function Nav() {
@@ -8,9 +9,9 @@ function Nav() {
         {pageLinks.map((link) => {
           return (
             <li>
-              <a key={link.id} href={link.href}>
+              <Link key={link.id} to={link.href}>
                 {link.text}
-              </a>
+              </Link>
             </li>
           );
         })}

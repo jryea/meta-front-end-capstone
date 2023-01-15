@@ -16,8 +16,8 @@ import customer03 from './images/Customer_03.png';
 import customer04 from './images/Customer_04.png';
 
 export const pageLinks = [
-  { id: 1, href: '#top', text: 'Home' },
-  { id: 2, href: '#top', text: 'Reservations' },
+  { id: 1, href: '/', text: 'Home' },
+  { id: 2, href: '/book', text: 'Reservations' },
   { id: 3, href: '#specials', text: 'Order Online' },
   { id: 4, href: '#about', text: 'About' },
   { id: 5, href: '#top', text: 'Login' },
@@ -121,7 +121,7 @@ export const timeData = {
     { id: 1, time: '11:00 AM', available: false },
     { id: 2, time: '11:30 AM', available: true },
     { id: 3, time: '12:00 PM', available: true },
-    { id: 4, time: '12:30 PM', available: true },
+    { id: 4, time: '12:30 PM', available: TextTrackCue },
     { id: 5, time: '1:00 PM', available: true },
     { id: 6, time: '1:30 PM', available: true },
     { id: 7, time: '2:00 PM', available: false },
