@@ -18,9 +18,9 @@ import customer04 from './images/Customer_04.png';
 export const pageLinks = [
   { id: 1, href: '/', text: 'Home' },
   { id: 2, href: '/book', text: 'Reservations' },
-  { id: 3, href: '#specials', text: 'Order Online' },
-  { id: 4, href: '#about', text: 'About' },
-  { id: 5, href: '#top', text: 'Login' },
+  { id: 3, href: '/', text: 'Order Online' },
+  { id: 4, href: '/', text: 'About' },
+  { id: 5, href: '/', text: 'Login' },
 ];
 
 export const socialLinks = [

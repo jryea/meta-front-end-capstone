@@ -88,6 +88,7 @@ html {
 //COMPONENTS
 
 //Buttons
+
 .button {
   @include text-card-title;
   width: max-content;
@@ -105,6 +106,7 @@ html {
   background-color: lighten($color-yellow, 15%);
   // transform: scale(1.05);
   cursor: pointer;
+  text-decoration: none;
 }
 
 .time-button {
@@ -115,6 +117,7 @@ html {
   border-radius: 5px;
   border: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .time-button-selected {
@@ -125,6 +128,13 @@ html {
   background-color: darken($color-light-gray, 10%);
   cursor: default;
   color: darken($color-light-gray, 40%);
+}
+
+.change-month-button {
+  background-color: $color-green;
+  border-radius: 100%;
+  width: 4rem;
+  height: 4rem;
 }
 
 //section key
@@ -172,6 +182,13 @@ html {
 }
 
 // CALENDAR
+
+.calendar-container {
+  margin-top: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .calendar {
   display: grid;
@@ -300,6 +317,15 @@ nav ul li a {
 
 nav ul li a:hover {
   color: $color-yellow;
+}
+
+// nav ul li a:active {
+//   color: $color-yellow;
+// }
+
+.active {
+  color: $color-green;
+  border-bottom: 2px solid $color-green;
 }
 
 //MAIN
@@ -575,6 +601,7 @@ nav ul li a:hover {
 }
 
 .footer-nav-link {
+  display: block;
   @include text-body;
   color: $color-light-gray;
   text-decoration: none;
@@ -673,4 +700,34 @@ nav ul li a:hover {
 
 .seating-subtitle {
   @include text-section-title;
+}
+
+// 404 PAGE NOT FOUND
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6rem;
+}
+
+.not-found-title {
+  @include text-title;
+  color: $color-yellow;
+}
+
+.not-found-subtitle {
+  @include text-sub-title;
+  margin-top: -2rem;
+  margin-bottom: 1.4rem;
+  color: white;
+}
+
+.not-found-text {
+  color: white;
+  @include text-lead;
+  width: 25rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  width: 100%;
 }

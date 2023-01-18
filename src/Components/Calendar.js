@@ -2,6 +2,10 @@ import React from 'react';
 import { useState } from 'react';
 import { calendarData } from '../data';
 
+function ChangeMonthButton() {
+  return <div className='change-month-button'></div>;
+}
+
 function CalendarBox({
   date,
   selected = false,
@@ -39,7 +43,13 @@ function Calendar() {
     />
   ));
 
-  return <div className='calendar'>{calendarBoxes}</div>;
+  return (
+    <div className='calendar-container'>
+      <ChangeMonthButton />
+      <div className='calendar'>{calendarBoxes}</div>
+      <ChangeMonthButton />
+    </div>
+  );
 }
 
 export default Calendar;

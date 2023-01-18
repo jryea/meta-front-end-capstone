@@ -36,7 +36,8 @@ html {
 
 .button:hover {
   background-color: #f7dd5d;
-  cursor: pointer; }
+  cursor: pointer;
+  text-decoration: none; }
 
 .time-button {
   font-family: 'Karla', sans-serif;
@@ -47,7 +48,8 @@ html {
   background-color: white;
   border-radius: 5px;
   border: none;
-  cursor: pointer; }
+  cursor: pointer;
+  text-decoration: none; }
 
 .time-button-selected {
   background-color: #f4ce14; }
@@ -56,6 +58,12 @@ html {
   background-color: #d2d7d5;
   cursor: default;
   color: #818f88; }
+
+.change-month-button {
+  background-color: #495e57;
+  border-radius: 100%;
+  width: 4rem;
+  height: 4rem; }
 
 .section-key {
   display: flex; }
@@ -93,6 +101,12 @@ html {
 .line-dark {
   width: 100%;
   border-bottom: 1px solid #b5b5b5; }
+
+.calendar-container {
+  margin-top: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
 
 .calendar {
   display: grid;
@@ -200,6 +214,10 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #f4ce14; }
+
+.active {
+  color: #495e57;
+  border-bottom: 2px solid #495e57; }
 
 .main-section {
   display: flex;
@@ -456,6 +474,7 @@ nav ul li a:hover {
   margin-bottom: 1rem; }
 
 .footer-nav-link {
+  display: block;
   color: #495e57;
   font-family: 'Karla', sans-serif;
   font-size: 1.6rem;
@@ -553,3 +572,33 @@ nav ul li a:hover {
   font-family: 'Karla', sans-serif;
   font-size: 3rem;
   font-weight: 700; }
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6rem; }
+
+.not-found-title {
+  font-family: 'Markazi Text', serif;
+  font-size: 6.4rem;
+  font-weight: 400;
+  color: #f4ce14; }
+
+.not-found-subtitle {
+  font-family: 'Markazi Text', serif;
+  font-size: 4rem;
+  font-weight: 300;
+  margin-top: -2rem;
+  margin-bottom: 1.4rem;
+  color: white; }
+
+.not-found-text {
+  color: white;
+  font-family: 'Karla', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  width: 25rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  width: 100%; }
